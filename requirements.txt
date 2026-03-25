@@ -6,3 +6,12 @@ langchain-core>=0.3.0
 langchain-text-splitters>=0.3.0
 langchain-experimental>=0.3.0
 langchain-openai>=0.2.0
+
+# Vector store (pgvector + SQLAlchemy)
+pgvector>=0.3.0
+psycopg2-binary>=2.9.0
+sqlalchemy>=2.0.0
+alembic>=1.13.0
+
+# Keyword search
+rank-bm25>=0.2.2

@@ -90,7 +90,7 @@ def build_strategies() -> list[ChunkingStrategy]:
         print("OPENAI_API_KEY is not set.", file=sys.stderr)
         sys.exit(1)
 
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     return [
         RecursiveCharacterTextSplitterStrategy(chunk_size=500, chunk_overlap=50),
         MarkdownHeaderTextSplitterStrategy(
