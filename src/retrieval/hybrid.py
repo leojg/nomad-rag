@@ -14,7 +14,7 @@ from ingestion.vector_store import similarity_search
 RRF_K = 60  # standard RRF constant — higher value reduces impact of rank differences
 
 
-def _reciprocal_rank_fusion(
+def reciprocal_rank_fusion(
     ranked_lists: list[list[ChunkRecord]],
 ) -> list[ChunkRecord]:
     """Merge ranked lists via Reciprocal Rank Fusion, return deduplicated results."""
@@ -56,5 +56,5 @@ def hybrid_search(
         filters=filters,
     )
 
-    merged = _reciprocal_rank_fusion([semantic_results, keyword_results])
+    merged = reciprocal_rank_fusion([semantic_results, keyword_results])
     return merged[:k]

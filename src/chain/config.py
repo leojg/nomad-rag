@@ -9,8 +9,9 @@ from dataclasses import dataclass
 class GraphConfig:
     """Graph configuration."""
 
-    model: str = "claude-sonnet-4-6"
+    generate_model: str = "claude-sonnet-4-6"
     rerank_model: str = "claude-haiku-4-5"
+    analysis_model: str = "claude-haiku-4-5"
     embeddings_model: str = EMBEDDING_MODEL
     temperature: float = 0.0
 
