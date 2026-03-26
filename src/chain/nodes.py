@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from typing import Any, Callable
-
+import re
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_openai import OpenAIEmbeddings
@@ -23,6 +23,7 @@ from retrieval.hybrid import hybrid_search
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
 
+
 def make_retrieve_node(config: GraphConfig, session: Session) -> Callable[[State], dict[str, Any]]:
     embeddings = OpenAIEmbeddings(model=config.embeddings_model)
     k = config.retrieve_k
@@ -42,7 +43,13 @@ def make_retrieve_node(config: GraphConfig, session: Session) -> Callable[[State
 
 def make_rerank_node(config: GraphConfig) -> Callable[[State], dict[str, Any]]:
 
-    llm = ChatAnthropic(model=config.model, temperature=config.temperature)
+    llm = ChatAnthropic(model=config.rerank_model, temperature=config.temperature)
+
+    def _parse_rerank_response(content: str) -> list:
+        """Strip markdown fences and parse JSON from rerank response."""
+        # Remove ```json ... ``` or ``` ... ``` wrappers
+        content = re.sub(r"```(?:json)?\s*", "", content).strip()
+        return json.loads(content)
 
     def rerank(state: State) -> dict[str, Any]:
         response = llm.invoke(
@@ -58,7 +65,7 @@ def make_rerank_node(config: GraphConfig) -> Callable[[State], dict[str, Any]]:
         )
 
         # Parse scores and sort
-        scores = json.loads(response.content)
+        scores = _parse_rerank_response(response.content)
         scores.sort(key=lambda x: x["score"], reverse=True)
 
         # Map chunk_id to ChunkRecord

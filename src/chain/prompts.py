@@ -13,7 +13,9 @@ Scoring guide:
 Return ONLY a JSON array of objects with chunk_id and score, ordered by score descending.
 Example: [{"chunk_id": "abc123", "score": 9}, {"chunk_id": "def456", "score": 4}]
 
-Do not include any explanation, preamble, or markdown formatting."""
+Return ONLY a raw JSON array — no markdown, no code fences, no explanation.
+Your entire response must start with [ and end with ].
+Example output: [{"chunk_id": "abc123", "score": 9}, {"chunk_id": "def456", "score": 4}]"""
 
 
 RERANK_USER_TEMPLATE = """Query: {query}

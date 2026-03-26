@@ -75,7 +75,7 @@ def print_run(label: str, result: dict) -> None:
 def main() -> None:
     engine = create_db_engine()
     # Match retrieval smoke test k=3 for comparable breadth.
-    config = GraphConfig(retrieve_k=10, rerank_k=4)
+    config = GraphConfig(retrieve_k=6, rerank_k=3)
 
     with session_scope(engine) as session:
         graph = make_graph(config, session)
