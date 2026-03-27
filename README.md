@@ -233,7 +233,7 @@ python scripts/scorecard.py --metrics baseline --tag m4
 python scripts/scorecard.py --skip-inference --metrics full --tag m4_full
 ```
 
-Results are saved as timestamped JSON snapshots in `data/evaluation/results/`.
+Results are saved as timestamped JSON snapshots in `data/evaluation/results/`. Only milestone baselines are tracked in git (`result_*_m3.json`, `result_*_run.json` for M4); other snapshots are ignored — see `.gitignore`.
 
 ---
 
@@ -284,12 +284,14 @@ cd nomad-rag
 # Create virtualenv
 python -m venv venv
 source venv/bin/activate
-pip install -e .
+pip install -e .   # installs dependencies from pyproject.toml
 
 # Configure environment
 cp .env.example .env
 # Edit .env: set OPENAI_API_KEY, ANTHROPIC_API_KEY
 ```
+
+The FastAPI app compiles the LangGraph pipeline with `build_agent()` in `src/agent/graph.py` (see Project Structure).
 
 ### Start the database
 
@@ -351,14 +353,6 @@ curl -X POST http://localhost:8000/documents \
 
 ```
 nomad-rag/
-├── data/
-│   ├── city_guides/            # City guide markdown documents
-│   ├── visa_info/              # Visa information documents
-│   ├── coworking/              # Coworking space reviews
-│   ├── cost_comparison/        # Multi-city cost comparisons
-│   └── evaluation/
-│       ├── test_set.json       # 25 evaluation test cases
-│       └── results/            # Timestamped RAGAS evaluation snapshots
 ├── src/
 │   ├── database.py             # SQLAlchemy engine and session management
 │   ├── config/
@@ -398,9 +392,9 @@ nomad-rag/
 │   └── scorecard.py            # RAGAS evaluation runner with two-phase execution
 ├── alembic/
 │   └── versions/
-│       ├── dc4045f226bf_create_chunks_table.py          # Initial schema + HNSW + tsvector trigger
-│       ├── a1b2c3d4e5f6_update_tsvector_simple.py       # Switch trigger to simple config
-│       └── 109d08d5b6a0_english_unaccent_config.py      # Custom english_unaccent ts config
+│       ├── dc4045f226bf_create_chunks_table.py                        # Initial schema + HNSW + tsvector trigger
+│       ├── a1b2c3d4e5f6_update_tsvector_trigger_simple_unaccent.py    # Switch trigger to simple_unaccent config
+│       └── 109d08d5b6a0_english_unaccent_ts_config_for_chunks_.py    # Custom english_unaccent ts config
 ├── data/
 │   ├── city_guides/            # 4 city guide markdown files
 │   ├── visa_info/              # 3 visa information markdown files

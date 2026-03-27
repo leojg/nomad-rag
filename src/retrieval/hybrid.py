@@ -1,4 +1,4 @@
-"""Hybrid retrieval combining semantic similarity and BM25 keyword search via RRF."""
+"""Hybrid retrieval combining semantic similarity and PostgreSQL full-text (tsvector) search via RRF."""
 
 from __future__ import annotations
 

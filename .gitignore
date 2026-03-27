@@ -48,6 +48,9 @@ htmlcov/
 # Generated / local outputs
 reports/
 data/evaluation/raw_results.json
+data/evaluation/results/*
+!data/evaluation/results/result_*_m3.json
+!data/evaluation/results/result_*_run.json
 
 # Jupyter
 .ipynb_checkpoints/

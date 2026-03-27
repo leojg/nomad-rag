@@ -2,7 +2,7 @@
 """
 Generate synthetic NomadLATAM markdown documents via Claude (Anthropic API).
 
-Requires: pip install -r requirements.txt
+Requires: pip install -e . (dependencies from pyproject.toml)
 Environment: ANTHROPIC_API_KEY (optional .env at project root via load_dotenv)
 
 Output: data/{city_guides,visa_info,coworking,cost_comparison}/*.md
@@ -19,7 +19,7 @@ try:
     from anthropic import Anthropic
     from dotenv import load_dotenv
 except ImportError:
-    print("Missing dependency: pip install -r requirements.txt", file=sys.stderr)
+    print("Missing dependency: pip install -e .", file=sys.stderr)
     sys.exit(1)
 
 # Project root = parent of scripts/
