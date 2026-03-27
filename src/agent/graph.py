@@ -1,15 +1,15 @@
 from sqlalchemy.orm import Session
 
-from chain.config import GraphConfig
-from chain.nodes import (
+from agent.config import AgentConfig
+from agent.nodes import (
     fallback,
     make_generate_node,
+    make_multi_retrieve_node,
     make_query_analysis_node,
     make_rerank_node,
     make_retrieve_node,
-    make_multi_retrieve_node,
 )
-from chain.state import State
+from agent.state import State
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.state import CompiledStateGraph
 
@@ -25,8 +25,8 @@ def _route_after_retrieve(state: State) -> str:
     return "fallback" if not state["retrieved_chunks"] else "rerank"
 
 
-def make_graph(config: GraphConfig, session: Session) -> CompiledStateGraph:
-    """Make the graph."""
+def build_agent(config: AgentConfig, session: Session) -> CompiledStateGraph:
+    """Compile the LangGraph retrieval agent."""
 
     graph = StateGraph(State)
 
@@ -48,7 +48,8 @@ def make_graph(config: GraphConfig, session: Session) -> CompiledStateGraph:
         _route_after_retrieve,
         {"fallback": "fallback", "rerank": "rerank"},
     )
-    graph.add_conditional_edges("multi_retrieve",
+    graph.add_conditional_edges(
+        "multi_retrieve",
         _route_after_retrieve,
         {"fallback": "fallback", "rerank": "rerank"},
     )

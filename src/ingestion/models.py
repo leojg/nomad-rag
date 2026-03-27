@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Literal
 
+from config.settings import OPENAI_EMBEDDING_DIMENSIONS
 from pgvector.sqlalchemy import Vector
 from pydantic import BaseModel
 from sqlalchemy import String, Text
@@ -40,7 +41,9 @@ class ChunkRecord(Base):
 
     id: Mapped[str] = mapped_column(String(64), primary_key=True)
     text: Mapped[str] = mapped_column(Text, nullable=False)
-    embedding: Mapped[list[float]] = mapped_column(Vector(1536), nullable=False)
+    embedding: Mapped[list[float]] = mapped_column(
+        Vector(OPENAI_EMBEDDING_DIMENSIONS), nullable=False
+    )
     source_file: Mapped[str] = mapped_column(Text, nullable=False)
     document_type: Mapped[str] = mapped_column(Text, nullable=False)
     country: Mapped[str | None] = mapped_column(Text, nullable=True)

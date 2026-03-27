@@ -12,6 +12,7 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
+from config.settings import DEFAULT_DATABASE_URL
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
@@ -19,8 +20,6 @@ from sqlalchemy.orm import Session, sessionmaker
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(_REPO_ROOT / ".env")
-
-DEFAULT_DATABASE_URL = "postgresql+psycopg2://nomad:nomad@localhost:5433/nomad_latam"
 
 
 def get_database_url() -> str:

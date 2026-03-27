@@ -3,16 +3,11 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Request
-from pydantic import BaseModel
 
-from services.chat import ChatResponse, chat_service
+from models.chat import ChatRequest, ChatResponse
+from services.chat import chat_service
 
 router = APIRouter(tags=["chat"])
-
-
-class ChatRequest(BaseModel):
-    query: str
-    filters: dict[str, str] | None = None
 
 
 @router.post("/chat", response_model=ChatResponse)

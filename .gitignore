@@ -45,5 +45,9 @@ htmlcov/
 *.swo
 .DS_Store
 
+# Generated / local outputs
+reports/
+data/evaluation/raw_results.json
+
 # Jupyter
 .ipynb_checkpoints/

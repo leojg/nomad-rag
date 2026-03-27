@@ -5,12 +5,12 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 from typing import AsyncIterator
 
+from agent.config import AgentConfig
+from agent.graph import build_agent
 from fastapi import FastAPI
 from langchain_openai import OpenAIEmbeddings
 from sqlalchemy.orm import Session
 
-from chain.config import GraphConfig
-from chain.graph import make_graph
 from database import create_db_engine
 from ingestion.vector_store import EMBEDDING_MODEL
 
@@ -23,13 +23,13 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """
     engine = create_db_engine()
     session = Session(engine)
-    config = GraphConfig()
+    config = AgentConfig()
     embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
     app.state.session = session
     app.state.embeddings = embeddings
     app.state.config = config
-    app.state.graph = make_graph(config, session)
+    app.state.graph = build_agent(config, session)
 
     yield
 

@@ -1,22 +1,11 @@
-"""Transport-agnostic chat service wrapping the LangGraph chain."""
+"""Transport-agnostic chat service wrapping the LangGraph agent."""
 
 from __future__ import annotations
 
 from langgraph.graph.state import CompiledStateGraph
-from pydantic import BaseModel
+from models.chat import ChatResponse, SourceAttribution
 
 from ingestion.models import ChunkRecord
-
-class SourceAttribution(BaseModel):
-    source_file: str
-    section: str | None
-    document_type: str
-
-
-class ChatResponse(BaseModel):
-    response: str
-    sources: list[SourceAttribution]
-    fallback_triggered: bool
 
 
 def _extract_sources(chunks: list[ChunkRecord]) -> list[SourceAttribution]:
@@ -39,8 +28,8 @@ def chat_service(
     filters: dict[str, str] | None,
     graph: CompiledStateGraph,
 ) -> ChatResponse:
-    """Run the RAG chain and return a structured response."""
-    from chain.prompts import FALLBACK_RESPONSE
+    """Run the RAG agent and return a structured response."""
+    from agent.prompts import FALLBACK_RESPONSE
 
     state = graph.invoke({
         "query": query,

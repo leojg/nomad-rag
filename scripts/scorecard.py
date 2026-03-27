@@ -25,11 +25,12 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from dotenv import load_dotenv
 
-from chain.config import GraphConfig
-from chain.graph import make_graph
+from agent.config import AgentConfig
+from agent.graph import build_agent
 from database import create_db_engine, session_scope
-from evaluation.metrics import EvaluationReport, RawResult, evaluate_pipeline
-from evaluation.test_set import TestCase, load_test_set
+from evaluation.metrics import EvaluationReport, evaluate_pipeline
+from evaluation.test_set import load_test_set
+from models.evaluation import RawResult, TestCase
 
 load_dotenv(ROOT / ".env")
 
@@ -45,21 +46,21 @@ def _initial_state(case: TestCase) -> dict:
     return {
         "query": case.question,
         "filters": case.filters,
+        "parsed_queries": None,
         "retrieved_chunks": [],
         "reranked_chunks": [],
-        "parsed_queries": [],
-        "response": None,
+        "response": "",
     }
 
 
 def run_inference(cases: list[TestCase]) -> list[RawResult]:
     """Run each test case through the compiled graph and collect raw results."""
     engine = create_db_engine()
-    config = GraphConfig()
+    config = AgentConfig()
     results = []
 
     with session_scope(engine) as session:
-        graph = make_graph(config, session)
+        graph = build_agent(config, session)
 
         for i, case in enumerate(cases, start=1):
             print(f"  [{i}/{len(cases)}] {case.category} — {case.question[:60]}...")
@@ -87,7 +88,7 @@ def run_inference(cases: list[TestCase]) -> list[RawResult]:
 
 
 def _fallback_response() -> str:
-    from chain.prompts import FALLBACK_RESPONSE
+    from agent.prompts import FALLBACK_RESPONSE
     return FALLBACK_RESPONSE
 
 

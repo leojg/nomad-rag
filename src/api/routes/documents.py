@@ -7,8 +7,9 @@ import tempfile
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Request, UploadFile
+from models.documents import IngestResponse
 
-from services.documents import IngestResponse, ingest_document
+from services.documents import ingest_document
 
 router = APIRouter(tags=["documents"])
 

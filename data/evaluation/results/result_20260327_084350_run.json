@@ -1,0 +1,261 @@
+{
+  "metric_set": "baseline",
+  "total_cases": 25,
+  "fallback_count": 6,
+  "aggregate": {
+    "faithfulness": 0.658,
+    "answer_relevancy": 0.495
+  },
+  "per_sample": [
+    {
+      "test_case_id": "tc_ee3625ad",
+      "question": "What is the maximum tourist stay allowed in Argentina for most nationalities?",
+      "category": "factual",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9102619318030306,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_35d67693",
+      "question": "How much does a monthly hot-desk membership cost at Nómada Hub in Medellín?",
+      "category": "factual",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_ac9888ce",
+      "question": "What is the approximate monthly income requirement to qualify for Colombia's Digital Nomad Visa?",
+      "category": "factual",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_8965c6c0",
+      "question": "What is the name of the weekly startup showcase event held at Nube Colectiva in Mexico City?",
+      "category": "factual",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_a9b2e9f1",
+      "question": "What is the typical duration of Mexico's Temporary Resident Visa?",
+      "category": "factual",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9153084172219778,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_be38a277",
+      "question": "What internet speeds does Praia Desk in Florianópolis offer?",
+      "category": "factual",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_df7a463c",
+      "question": "Is rent generally cheaper in Medellín or Mexico City for a centrally located furnished one-bedroom apartment?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.9634198396076568,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_931144be",
+      "question": "Which city has a higher overall monthly cost of living for a comfortable nomad lifestyle: Buenos Aires or Florianópolis?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 0.8888888888888888,
+      "answer_relevancy": 0.9617690799892203,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_0d157a6b",
+      "question": "How do Colombia's and Costa Rica's digital nomad visa income requirements compare?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_15e94fa1",
+      "question": "Are coworking spaces more affordable in Medellín or in Mexico City?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.9821688132241421,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_d7915e8e",
+      "question": "Which allows a longer initial tourist stay: Mexico or Argentina?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9826277151550148,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_4037759e",
+      "question": "How do grocery costs compare across Medellín, Florianópolis, Mexico City, and Buenos Aires for a single person?",
+      "category": "comparison",
+      "fallback_triggered": false,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.9661751968786034,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_58d55fda",
+      "question": "Which cities in the documents have coworking spaces with hot-desk memberships available for under USD 150 per month?",
+      "category": "aggregation",
+      "fallback_triggered": false,
+      "faithfulness": 0.9285714285714286,
+      "answer_relevancy": 0.9558848078516776,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_3ea8be3b",
+      "question": "Across all four cities covered, which countries offer a formal digital nomad visa program as of mid-2024?",
+      "category": "aggregation",
+      "fallback_triggered": false,
+      "faithfulness": 0.6363636363636364,
+      "answer_relevancy": 0.9370745142771121,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_448f33b8",
+      "question": "Which coworking spaces across all reviewed cities offer podcast recording rooms or soundbooths?",
+      "category": "aggregation",
+      "fallback_triggered": false,
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.9477661635411995,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_5ced47c3",
+      "question": "What are the budget-end monthly rent estimates for a central one-bedroom apartment across all four cities in the cost comparison snapshot?",
+      "category": "aggregation",
+      "fallback_triggered": false,
+      "faithfulness": 0.9090909090909091,
+      "answer_relevancy": 0.9420179895135335,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_df864b5f",
+      "question": "Which cities in the documents have coworking spaces that explicitly offer gigabit or 1 Gbps internet connections?",
+      "category": "aggregation",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9540074980044905,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_26a4e7ed",
+      "question": "What are the best coworking spaces in Bogotá for digital nomads?",
+      "category": "out_of_scope",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_34dce3e6",
+      "question": "What is the cost of living for digital nomads in Lima, Peru?",
+      "category": "out_of_scope",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_b4e4bf7e",
+      "question": "How do I apply for a digital nomad visa in Portugal?",
+      "category": "out_of_scope",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_0f2c84c9",
+      "question": "Which coworking spaces in Santiago, Chile are popular with digital nomads?",
+      "category": "out_of_scope",
+      "fallback_triggered": true,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_ab9401c6",
+      "question": "Where should I go as a digital nomad in Latin America?",
+      "category": "ambiguous",
+      "fallback_triggered": false,
+      "faithfulness": 0.9375,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_6b82a232",
+      "question": "Is Latin America good for remote work?",
+      "category": "ambiguous",
+      "fallback_triggered": false,
+      "faithfulness": 0.9285714285714286,
+      "answer_relevancy": 0.9660388027572825,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_2b83c482",
+      "question": "What's the best neighborhood to live in?",
+      "category": "ambiguous",
+      "fallback_triggered": false,
+      "faithfulness": 0.76,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    },
+    {
+      "test_case_id": "tc_281b3a64",
+      "question": "How hard is it to get a visa?",
+      "category": "ambiguous",
+      "fallback_triggered": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": null,
+      "context_recall": null
+    }
+  ]
+}

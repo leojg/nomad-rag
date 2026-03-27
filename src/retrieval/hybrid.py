@@ -7,11 +7,12 @@ from collections import defaultdict
 from langchain_openai import OpenAIEmbeddings
 from sqlalchemy.orm import Session
 
+from config.settings import RETRIEVAL_RRF_K
 from ingestion.models import ChunkRecord
-from retrieval.keyword_search import keyword_search
 from ingestion.vector_store import similarity_search
+from retrieval.keyword_search import keyword_search
 
-RRF_K = 60  # standard RRF constant — higher value reduces impact of rank differences
+RRF_K = RETRIEVAL_RRF_K
 
 
 def reciprocal_rank_fusion(

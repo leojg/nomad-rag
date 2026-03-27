@@ -1,0 +1,246 @@
+{
+  "version": "1.0",
+  "generated_by": "claude-sonnet-4-6",
+  "cases": [
+    {
+      "id": "tc_ee3625ad",
+      "question": "What is the maximum tourist stay allowed in Argentina for most nationalities?",
+      "expected_answer": "Citizens of many countries, including the United States, Canada, the United Kingdom, Australia, and most EU nations, can enter Argentina visa-free for up to 90 days.",
+      "category": "factual",
+      "filters": {
+        "country": "Argentina",
+        "document_type": "visa_info"
+      },
+      "notes": "Directly from visa_info/argentina_visa_options_bullets.md"
+    },
+    {
+      "id": "tc_35d67693",
+      "question": "How much does a monthly hot-desk membership cost at Nómada Hub in Medellín?",
+      "expected_answer": "Nómada Hub charges around COP 420,000 per month for hot-desk access.",
+      "category": "factual",
+      "filters": {
+        "city": "Medellín",
+        "document_type": "coworking_review"
+      },
+      "notes": "Directly from coworking/medellin_florianopolis_reviews.md"
+    },
+    {
+      "id": "tc_ac9888ce",
+      "question": "What is the approximate monthly income requirement to qualify for Colombia's Digital Nomad Visa?",
+      "expected_answer": "Colombia's Digital Nomad Visa requires proof of foreign-sourced income of at least approximately USD 684 per month, which equals 3 times the Colombian minimum wage.",
+      "category": "factual",
+      "filters": {
+        "country": "Colombia",
+        "document_type": "visa_info"
+      },
+      "notes": "Directly from visa_info/latin_america_dnv_summary_table.md"
+    },
+    {
+      "id": "tc_8965c6c0",
+      "question": "What is the name of the weekly startup showcase event held at Nube Colectiva in Mexico City?",
+      "expected_answer": "The weekly informal startup showcase at Nube Colectiva is called Miércoles de Pitch.",
+      "category": "factual",
+      "filters": {
+        "city": "Mexico City",
+        "document_type": "coworking_review"
+      },
+      "notes": "Directly from coworking/mexico_city_buenos_aires_reviews.md"
+    },
+    {
+      "id": "tc_a9b2e9f1",
+      "question": "What is the typical duration of Mexico's Temporary Resident Visa?",
+      "expected_answer": "Mexico's Temporary Resident Visa (Residente Temporal) lasts 1 to 4 years and is renewable annually.",
+      "category": "factual",
+      "filters": {
+        "country": "Mexico",
+        "document_type": "visa_info"
+      },
+      "notes": "Directly from visa_info/latin_america_dnv_summary_table.md"
+    },
+    {
+      "id": "tc_be38a277",
+      "question": "What internet speeds does Praia Desk in Florianópolis offer?",
+      "expected_answer": "Praia Desk is powered by Vivo Fibra and offers a 500 Mbps connection with consistent uptime.",
+      "category": "factual",
+      "filters": {
+        "city": "Florianópolis",
+        "document_type": "coworking_review"
+      },
+      "notes": "Directly from coworking/medellin_florianopolis_reviews.md"
+    },
+    {
+      "id": "tc_df7a463c",
+      "question": "Is rent generally cheaper in Medellín or Mexico City for a centrally located furnished one-bedroom apartment?",
+      "expected_answer": "Medellín is generally cheaper. A furnished 1BR in El Poblado or Laureles runs around $500–$900/month, while comparable neighborhoods in Mexico City like Roma Norte or Condesa typically run $700–$1,200/month. The four-city cost comparison also gives the edge to Medellín, though the gap has narrowed in recent years.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "cost_comparison"
+      },
+      "notes": "From cost_comparison/medellin_vs_mexico_city.md and cost_comparison/four_city_rent_and_coworking_snapshot.md"
+    },
+    {
+      "id": "tc_931144be",
+      "question": "Which city has a higher overall monthly cost of living for a comfortable nomad lifestyle: Buenos Aires or Florianópolis?",
+      "expected_answer": "Florianópolis tends to have a slightly higher comfortable monthly cost. The four-city snapshot places Florianópolis rent at the upper end among the four cities compared, while Buenos Aires benefits significantly from the favorable peso exchange rate, allowing comfortable living at roughly $1,200–$1,800/month versus Florianópolis's approximately USD 1,100–1,600/month at mid-2024 rates, with Florianópolis trending higher in furnished rentals.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "cost_comparison"
+      },
+      "notes": "From cost_comparison/four_city_rent_and_coworking_snapshot.md and city guides for both cities"
+    },
+    {
+      "id": "tc_0d157a6b",
+      "question": "How do Colombia's and Costa Rica's digital nomad visa income requirements compare?",
+      "expected_answer": "Colombia requires proof of foreign-sourced income of at least approximately USD 684/month, while Costa Rica requires at least USD 3,000/month. Costa Rica's income requirement is significantly higher.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "visa_info"
+      },
+      "notes": "Directly from visa_info/latin_america_dnv_summary_table.md"
+    },
+    {
+      "id": "tc_15e94fa1",
+      "question": "Are coworking spaces more affordable in Medellín or in Mexico City?",
+      "expected_answer": "Medellín's coworking spaces tend to be cheaper. In Medellín, hot desks run approximately COP 380,000–420,000/month (roughly USD 90–105). In Mexico City, hot desks at reviewed spaces run MXN 3,800–4,500/month (approximately USD 220–265), making Mexico City noticeably more expensive for coworking.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "coworking_review"
+      },
+      "notes": "From coworking/medellin_florianopolis_reviews.md and coworking/mexico_city_buenos_aires_reviews.md"
+    },
+    {
+      "id": "tc_d7915e8e",
+      "question": "Which allows a longer initial tourist stay: Mexico or Argentina?",
+      "expected_answer": "Mexico allows up to 180 days on a visitor permit (though the actual duration is at the immigration officer's discretion), while Argentina allows up to 90 days for eligible nationalities. Mexico's tourist stay is potentially twice as long.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "visa_info"
+      },
+      "notes": "From visa_info/mexico_visa_paths_overview.md and visa_info/argentina_visa_options_bullets.md"
+    },
+    {
+      "id": "tc_4037759e",
+      "question": "How do grocery costs compare across Medellín, Florianópolis, Mexico City, and Buenos Aires for a single person?",
+      "expected_answer": "According to the four-city snapshot, Medellín has the lowest grocery costs at roughly $120–180/month. Florianópolis is slightly higher at around $160–230/month. Mexico City and Buenos Aires figures are also covered in the snapshot, with all cities generally being cheaper than Western equivalents. Medellín's local produce markets like Paloquemao make it the most affordable.",
+      "category": "comparison",
+      "filters": {
+        "document_type": "cost_comparison"
+      },
+      "notes": "From cost_comparison/four_city_rent_and_coworking_snapshot.md and cost_comparison/medellin_vs_mexico_city.md"
+    },
+    {
+      "id": "tc_58d55fda",
+      "question": "Which cities in the documents have coworking spaces with hot-desk memberships available for under USD 150 per month?",
+      "expected_answer": "Medellín has two options under USD 150/month: Nómada Hub at approximately COP 420,000 (roughly USD 100–105) and Selva Cowork at approximately COP 380,000 (roughly USD 90–95). Florianópolis has Praia Desk at BRL 650/month (approximately USD 130) and Canto Sul at BRL 720/month (approximately USD 140–145). Buenos Aires coworking is listed in the city guide at $60–$120/month. Mexico City's reviewed spaces (Nube Colectiva at ~USD 220 and Taller Catorce at ~USD 265) exceed this threshold.",
+      "category": "aggregation",
+      "filters": {
+        "document_type": "coworking_review"
+      },
+      "notes": "Synthesized from coworking/medellin_florianopolis_reviews.md, coworking/mexico_city_buenos_aires_reviews.md, and city_guides/buenos_aires_argentina.md"
+    },
+    {
+      "id": "tc_3ea8be3b",
+      "question": "Across all four cities covered, which countries offer a formal digital nomad visa program as of mid-2024?",
+      "expected_answer": "Among the four cities covered, Colombia (Visa Nómada Digital, up to 2 years) and Brazil (VITEM XIV, 1 year extendable) have formal digital nomad visa programs. Mexico uses a general Temporary Resident Visa without a dedicated nomad category, and Argentina does not currently have a formal digital nomad visa — remote workers in both countries typically rely on tourist or general temporary residence provisions.",
+      "category": "aggregation",
+      "filters": {
+        "document_type": "visa_info"
+      },
+      "notes": "Synthesized from visa_info/latin_america_dnv_summary_table.md and visa_info/argentina_visa_options_bullets.md"
+    },
+    {
+      "id": "tc_448f33b8",
+      "question": "Which coworking spaces across all reviewed cities offer podcast recording rooms or soundbooths?",
+      "expected_answer": "Nómada Hub in Medellín features two podcast-ready soundbooths. Nube Colectiva in Mexico City offers two podcast-ready recording rooms. Taller Catorce in Mexico City's amenity list is partially described in the documents. These are the explicitly mentioned spaces with podcast facilities.",
+      "category": "aggregation",
+      "filters": {
+        "document_type": "coworking_review"
+      },
+      "notes": "Synthesized from coworking/medellin_florianopolis_reviews.md and coworking/mexico_city_buenos_aires_reviews.md"
+    },
+    {
+      "id": "tc_5ced47c3",
+      "question": "What are the budget-end monthly rent estimates for a central one-bedroom apartment across all four cities in the cost comparison snapshot?",
+      "expected_answer": "According to the four-city snapshot, budget-end monthly rent for a central 1BR is approximately: Medellín ~$400, Buenos Aires ~$350, Mexico City ~$500, and Florianópolis ~$550. Buenos Aires has the lowest budget-end rent, largely due to the favorable USD exchange rate.",
+      "category": "aggregation",
+      "filters": {
+        "document_type": "cost_comparison"
+      },
+      "notes": "Directly from cost_comparison/four_city_rent_and_coworking_snapshot.md"
+    },
+    {
+      "id": "tc_df864b5f",
+      "question": "Which cities in the documents have coworking spaces that explicitly offer gigabit or 1 Gbps internet connections?",
+      "expected_answer": "Nómada Hub in Medellín advertises gigabit fiber via Claro Colombia. Canto Sul Workspace in Florianópolis has a dedicated 1 Gbps fiber line. Taller Catorce in Mexico City features a dedicated 1 Gbps leased line from Axtel Networks. These three spaces across Medellín, Florianópolis, and Mexico City explicitly offer gigabit-level connectivity.",
+      "category": "aggregation",
+      "filters": {
+        "document_type": "coworking_review"
+      },
+      "notes": "Synthesized from coworking/medellin_florianopolis_reviews.md and coworking/mexico_city_buenos_aires_reviews.md"
+    },
+    {
+      "id": "tc_26a4e7ed",
+      "question": "What are the best coworking spaces in Bogotá for digital nomads?",
+      "expected_answer": "The provided documents do not contain information about coworking spaces in Bogotá. The coworking reviews only cover spaces in Medellín, Florianópolis, Mexico City, and Buenos Aires.",
+      "category": "out_of_scope",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_34dce3e6",
+      "question": "What is the cost of living for digital nomads in Lima, Peru?",
+      "expected_answer": "The provided documents do not include any information about Lima or Peru. The cities and countries covered are Medellín (Colombia), Florianópolis (Brazil), Mexico City (Mexico), and Buenos Aires (Argentina).",
+      "category": "out_of_scope",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_b4e4bf7e",
+      "question": "How do I apply for a digital nomad visa in Portugal?",
+      "expected_answer": "The provided documents do not contain any information about Portugal or European visa options. The visa information covered is limited to Latin American countries, specifically Colombia, Costa Rica, Mexico, and Brazil.",
+      "category": "out_of_scope",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_0f2c84c9",
+      "question": "Which coworking spaces in Santiago, Chile are popular with digital nomads?",
+      "expected_answer": "The provided documents do not include any information about Santiago or Chile. Coworking space reviews are limited to Medellín, Florianópolis, Mexico City, and Buenos Aires.",
+      "category": "out_of_scope",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_ab9401c6",
+      "question": "Where should I go as a digital nomad in Latin America?",
+      "expected_answer": "This question is too vague to answer definitively without more context. The documents cover four cities — Medellín (Colombia), Florianópolis (Brazil), Mexico City (Mexico), and Buenos Aires (Argentina) — each with distinct trade-offs. Could you clarify your priorities? For example: Are you focused on low cost of living, beach access, visa flexibility, coworking culture, or nightlife? Your budget and preferred climate would also help narrow down the best fit.",
+      "category": "ambiguous",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_6b82a232",
+      "question": "Is Latin America good for remote work?",
+      "expected_answer": "This is a broad question that depends heavily on individual preferences and circumstances. Based on the documents, Latin America — specifically cities like Medellín, Mexico City, Buenos Aires, and Florianópolis — offers strong value for remote workers in terms of cost of living, coworking infrastructure, and connectivity. However, 'good' means different things to different people. Are you asking about internet reliability, visa options, affordability, safety, or community? Clarifying your priorities would allow for a more useful answer.",
+      "category": "ambiguous",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_2b83c482",
+      "question": "What's the best neighborhood to live in?",
+      "expected_answer": "This question is ambiguous without specifying a city or personal priorities. The documents discuss several neighborhoods across four cities: El Poblado and Laureles in Medellín, Roma Norte and Condesa in Mexico City, Palermo in Buenos Aires, and Lagoa da Conceição in Florianópolis. The 'best' neighborhood depends on your budget, lifestyle preferences, proximity to coworking spaces, and whether you prioritize nightlife, quiet, or beach access. Which city are you considering?",
+      "category": "ambiguous",
+      "filters": null,
+      "notes": null
+    },
+    {
+      "id": "tc_281b3a64",
+      "question": "How hard is it to get a visa?",
+      "expected_answer": "This question is too vague to answer without knowing which country you're asking about and your nationality. The documents cover visa options for Colombia, Mexico, Argentina, Costa Rica, and Brazil. Difficulty varies widely: Argentina's tourist entry is straightforward for many nationalities (no advance visa needed), while Colombia's digital nomad visa requires an online application with income proof and biometrics. Could you specify which country and your nationality for a more precise answer?",
+      "category": "ambiguous",
+      "filters": null,
+      "notes": null
+    }
+  ]
+}

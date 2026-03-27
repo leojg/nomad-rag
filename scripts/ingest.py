@@ -18,14 +18,11 @@ from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 
 from database import create_db_engine, session_scope
-from ingestion.chunking import MarkdownHeaderTextSplitterStrategy
+from ingestion.chunking import MARKDOWN_HEADERS_TO_SPLIT_ON, MarkdownHeaderTextSplitterStrategy
 from ingestion.loader import loader
-from ingestion.models import Base
-from ingestion.vector_store import EMBEDDING_DIMENSIONS, EMBEDDING_MODEL, upsert_chunks
+from ingestion.vector_store import EMBEDDING_MODEL, upsert_chunks
 
 load_dotenv(ROOT / ".env")
-
-HEADERS_TO_SPLIT_ON = [("#", "Header 1"), ("##", "Header 2"), ("###", "Header 3")]
 
 
 def _check_env() -> None:
@@ -35,7 +32,9 @@ def _check_env() -> None:
 
 
 def _build_strategy() -> MarkdownHeaderTextSplitterStrategy:
-    return MarkdownHeaderTextSplitterStrategy(headers_to_split_on=HEADERS_TO_SPLIT_ON)
+    return MarkdownHeaderTextSplitterStrategy(
+        headers_to_split_on=MARKDOWN_HEADERS_TO_SPLIT_ON,
+    )
 
 
 def main() -> None:

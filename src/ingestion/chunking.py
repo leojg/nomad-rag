@@ -5,6 +5,13 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHea
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.embeddings import Embeddings
 
+MARKDOWN_HEADERS_TO_SPLIT_ON: list[tuple[str, str]] = [
+    ("#", "Header 1"),
+    ("##", "Header 2"),
+    ("###", "Header 3"),
+]
+
+
 class ChunkingStrategy(ABC):
     """Splits one document into many chunks; metadata is copied and refined per chunk."""
 

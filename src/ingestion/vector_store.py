@@ -3,11 +3,16 @@ import hashlib
 from langchain_openai import OpenAIEmbeddings
 from sqlalchemy.orm import Session
 
+from config.settings import (
+    OPENAI_EMBEDDING_BATCH_SIZE,
+    OPENAI_EMBEDDING_DIMENSIONS,
+    OPENAI_EMBEDDING_MODEL,
+)
 from ingestion.models import ChunkMetadata, ChunkRecord
 
-EMBEDDING_MODEL = "text-embedding-3-small"
-EMBEDDING_DIMENSIONS = 1536
-BATCH_SIZE = 100
+EMBEDDING_MODEL = OPENAI_EMBEDDING_MODEL
+EMBEDDING_DIMENSIONS = OPENAI_EMBEDDING_DIMENSIONS
+BATCH_SIZE = OPENAI_EMBEDDING_BATCH_SIZE
 
 def _chunk_id(source_file: str, text: str) -> str:
     """Deterministic ID from source file + content — stable across re-ingestion."""
@@ -35,6 +40,11 @@ def upsert_chunks(chunks: list[tuple[str, ChunkMetadata]], embeddings: OpenAIEmb
     embeddings = _embed_texts(texts, embeddings)
 
     for (text, metadata), embedding in zip(chunks, embeddings):
+        if len(embedding) != OPENAI_EMBEDDING_DIMENSIONS:
+            raise ValueError(
+                f"Embedding length {len(embedding)} != OPENAI_EMBEDDING_DIMENSIONS "
+                f"({OPENAI_EMBEDDING_DIMENSIONS}); check OPENAI_EMBEDDING_MODEL / dimensions."
+            )
         chunk_id = _chunk_id(metadata.source_file, text)
         record = session.get(ChunkRecord, chunk_id)
 

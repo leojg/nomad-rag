@@ -1,4 +1,4 @@
-"""System prompts for the LangGraph RAG chain."""
+"""System prompts for the LangGraph RAG agent."""
 
 from __future__ import annotations
 
