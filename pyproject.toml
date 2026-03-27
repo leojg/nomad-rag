@@ -6,6 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "nomad-rag"
 version = "0.1.0"
 description = "Latin America nomad RAG API and tooling"
+readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.40.0",

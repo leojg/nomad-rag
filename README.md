@@ -440,3 +440,9 @@ Carried forward from prior projects:
 - **Service layer pattern.** All business logic in transport-agnostic services. API routes are thin adapters. The same service functions can be called from CLI scripts, tests, or future transports.
 - **Evidence-based decisions.** Chunking strategy, model tier, and retrieval design choices are backed by measurable evidence — batch comparison outputs, RAGAS scores, and cost measurements — not intuition.
 - **Evaluation as a first-class deliverable.** The scorecard script and test set are committed artifacts, not afterthoughts. Pipeline changes can be quantified.
+
+---
+
+## License
+
+Licensed under the **Apache License, Version 2.0** — see [`LICENSE`](LICENSE).
